@@ -1,0 +1,7 @@
+export const navigation = [
+  { label: 'About', href: '/about' },
+  { label: 'Resume', href: '/resume' },
+  { label: 'Consulting', href: '/consulting' },
+  { label: 'Writing', href: '/writing' },
+  { label: 'Contact', href: '/contact' },
+]
