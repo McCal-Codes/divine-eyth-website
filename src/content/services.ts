@@ -1,31 +1,31 @@
-import { ClipboardList, FileCheck2, MessageSquareText, Users } from 'lucide-react'
+// Consulting services — edit via the Tina admin UI at /admin ("Services"),
+// or directly in services.json. This file resolves each service's icon name
+// (a plain string in the JSON, editable as a dropdown in Tina) to the actual
+// lucide-react icon component the pages render.
+import {
+  ClipboardCheck,
+  ClipboardList,
+  FileCheck2,
+  FileText,
+  MessageSquareText,
+  Users,
+  UsersRound,
+} from 'lucide-react'
+import servicesData from './services.json'
 
-// Consulting services — the first 3 show on the homepage, all of them show
-// on /consulting. To add a service, copy an object below and pick any icon
-// from https://lucide.dev/icons (import it at the top of this file).
-export const services = [
-  {
-    title: 'HR Foundations',
-    description:
-      'Support with workplace documentation, onboarding checklists, employee communication, policy organization, and basic HR infrastructure.',
-    icon: ClipboardList,
-  },
-  {
-    title: 'Hiring & Onboarding Systems',
-    description:
-      'Create clearer hiring workflows, role documentation, interview processes, onboarding guides, and first-90-day support systems.',
-    icon: Users,
-  },
-  {
-    title: 'Compliance & Credentialing Support',
-    description:
-      'Organize documentation-heavy workflows, credentialing checklists, application tracking, and recurring compliance processes.',
-    icon: FileCheck2,
-  },
-  {
-    title: 'Workplace Communication',
-    description:
-      'Help leaders write clearer internal communication, improve expectations, and reduce confusion through better documentation.',
-    icon: MessageSquareText,
-  },
-]
+// Add an entry here (and to the `icon` field's options in tina/config.ts)
+// to make a new icon selectable in the Tina dropdown.
+const iconMap = {
+  ClipboardList,
+  ClipboardCheck,
+  FileCheck2,
+  FileText,
+  MessageSquareText,
+  Users,
+  UsersRound,
+}
+
+export const services = servicesData.services.map((service) => ({
+  ...service,
+  icon: iconMap[service.icon as keyof typeof iconMap] ?? ClipboardList,
+}))

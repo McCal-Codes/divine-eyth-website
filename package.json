@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "tinacms dev -c \"vite\"",
+    "dev:vite-only": "vite",
+    "build": "tinacms build && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -14,10 +15,12 @@
     "marked": "^18.0.5",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^7.15.1"
+    "react-router-dom": "^7.15.1",
+    "tinacms": "^3.9.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@tinacms/cli": "^2.5.2",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

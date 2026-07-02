@@ -1,9 +1,6 @@
-// Header and footer nav links, in order. Add/remove/reorder entries here —
-// `href` must match a route defined in src/App.tsx.
-export const navigation = [
-  { label: 'About', href: '/about' },
-  { label: 'Resume', href: '/resume' },
-  { label: 'Consulting', href: '/consulting' },
-  { label: 'Writing', href: '/writing' },
-  { label: 'Contact', href: '/contact' },
-]
+// Header/footer nav links — edit via the Tina admin UI at /admin
+// ("Navigation"), or directly in navigation.json. `href` must match a route
+// defined in src/App.tsx.
+import navigationData from '../content/navigation.json'
+
+export const navigation = navigationData.items

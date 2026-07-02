@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .vercel
 .env*
+
+# TinaCMS generated client/types + admin build output
+tina/__generated__
+public/admin
