@@ -1,4 +1,5 @@
 import { Download, FileText } from 'lucide-react'
+import { PageHero } from '../components/ui/PageHero'
 import { Seo } from '../components/ui/Seo'
 import { resume } from '../content/resume'
 
@@ -11,15 +12,17 @@ export function Resume() {
         path="/resume"
       />
 
-      <section className="page-hero">
-        <p className="section-label">Resume</p>
-        <h1>People operations, workplace systems, and professional communication.</h1>
-        <p>{resume.summary}</p>
-        <button className="button button-primary" type="button" disabled>
+      <PageHero
+        index="01"
+        label="Resume"
+        title="People operations, workplace systems, and professional communication."
+        description={resume.summary}
+      >
+        <button className="button button-primary" type="button" disabled aria-disabled="true">
           <span>Resume PDF coming soon</span>
           <Download aria-hidden="true" size={16} />
         </button>
-      </section>
+      </PageHero>
 
       <section className="resume-layout">
         <div className="resume-main">

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { PageHero } from '../components/ui/PageHero'
 import { Seo } from '../components/ui/Seo'
 import { writingCategories, posts } from '../content/posts'
 
@@ -13,14 +14,12 @@ export function Writing() {
         path="/writing"
       />
 
-      <section className="page-hero">
-        <p className="section-label">Writing</p>
-        <h1>Essays at the intersection of work, language, and human systems.</h1>
-        <p>
-          A home for professional essays, literary reflections, and practical writing on workplace
-          communication, people operations, leadership, and culture.
-        </p>
-      </section>
+      <PageHero
+        index="01"
+        label="Writing"
+        title="Essays at the intersection of work, language, and human systems."
+        description="A home for professional essays, literary reflections, and practical writing on workplace communication, people operations, leadership, and culture."
+      />
 
       <section className="category-rail" aria-label="Writing categories">
         {writingCategories.map((category) => (

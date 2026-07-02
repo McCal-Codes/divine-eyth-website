@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { PageHero } from '../components/ui/PageHero'
 import { Seo } from '../components/ui/Seo'
 
 export function NotFound() {
@@ -10,13 +11,13 @@ export function NotFound() {
         path="/404"
       />
 
-      <section className="page-hero narrow not-found-page">
-        <p className="section-label">404</p>
-        <h1>That page is not available.</h1>
-        <p>
-          The page may have moved, or the content may not be ready for public reading yet. Return
-          home or explore the current site sections.
-        </p>
+      <PageHero
+        label="404"
+        title="That page is not available."
+        description="The page may have moved, or the content may not be ready for public reading yet. Return home or explore the current site sections."
+        narrow
+        className="not-found-page"
+      >
         <div className="hero-actions">
           <Link className="button button-primary" to="/">
             Home
@@ -25,7 +26,7 @@ export function NotFound() {
             Writing
           </Link>
         </div>
-      </section>
+      </PageHero>
     </>
   )
 }

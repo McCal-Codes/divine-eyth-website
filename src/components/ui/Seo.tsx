@@ -20,7 +20,7 @@ const upsertMeta = (selector: string, attr: 'name' | 'property', value: string, 
   tag.content = content
 }
 
-export function Seo({ title, description, path = '/', image = '/og-image.png' }: SeoProps) {
+export function Seo({ title, description, path = '/', image = '/og-image.jpg' }: SeoProps) {
   useEffect(() => {
     const pageTitle = `${title} | ${profile.name}`
     const canonicalUrl = `${profile.siteUrl}${path}`

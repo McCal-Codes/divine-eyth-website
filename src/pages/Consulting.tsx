@@ -1,9 +1,9 @@
-import { AlertCircle, ClipboardList, FileCheck2, MessageSquareText, Users } from 'lucide-react'
+import { AlertCircle } from 'lucide-react'
 import { ButtonLink } from '../components/ui/ButtonLink'
+import { Kicker } from '../components/ui/Kicker'
+import { PageHero } from '../components/ui/PageHero'
 import { Seo } from '../components/ui/Seo'
 import { services } from '../content/services'
-
-const icons = [ClipboardList, Users, FileCheck2, MessageSquareText]
 
 export function Consulting() {
   return (
@@ -14,33 +14,28 @@ export function Consulting() {
         path="/consulting"
       />
 
-      <section className="page-hero">
-        <p className="section-label">Consulting</p>
-        <h1>Practical HR and people operations support for growing teams.</h1>
-        <p>
-          Support for small teams and growing organizations that need clearer documentation,
-          onboarding systems, credentialing workflows, and communication practices without adding
-          unnecessary complexity.
-        </p>
+      <PageHero
+        index="01"
+        label="Consulting"
+        title="Practical HR and people operations support for growing teams."
+        description="Support for small teams and growing organizations that need clearer documentation, onboarding systems, credentialing workflows, and communication practices without adding unnecessary complexity."
+      >
         <ButtonLink to="/contact">Start an inquiry</ButtonLink>
-      </section>
+      </PageHero>
 
       <section className="service-page-grid" aria-label="Consulting services">
-        {services.map((service, index) => {
-          const Icon = icons[index]
-          return (
-            <article className="service-card" key={service.title}>
-              <Icon aria-hidden="true" size={26} />
-              <h2>{service.title}</h2>
-              <p>{service.description}</p>
-            </article>
-          )
-        })}
+        {services.map((service) => (
+          <article className="service-card" key={service.title}>
+            <service.icon aria-hidden="true" size={26} />
+            <h2>{service.title}</h2>
+            <p>{service.description}</p>
+          </article>
+        ))}
       </section>
 
       <section className="process-band">
         <div>
-          <p className="section-label">How the work feels</p>
+          <Kicker index="02">How the work feels</Kicker>
           <h2>Clear, organized, and appropriately scoped.</h2>
         </div>
         <ol>

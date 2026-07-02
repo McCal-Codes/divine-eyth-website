@@ -1,5 +1,7 @@
 import { ButtonLink } from '../components/ui/ButtonLink'
 import { JsonLd } from '../components/ui/JsonLd'
+import { Kicker } from '../components/ui/Kicker'
+import { PageHero } from '../components/ui/PageHero'
 import { Seo } from '../components/ui/Seo'
 import { personSchema, profile } from '../content/profile'
 
@@ -32,15 +34,13 @@ export function About() {
       />
       <JsonLd data={personSchema} />
 
-      <section className="page-hero narrow">
-        <p className="section-label">About</p>
-        <h1>People operations with a writer’s attention to clarity.</h1>
-        <p>
-          Divine Eyth works across people operations, HR systems, compliance support, and writing.
-          Her work treats documentation as more than paperwork: it is structure that helps people
-          understand expectations, responsibilities, and possibilities.
-        </p>
-      </section>
+      <PageHero
+        index="01"
+        label="About"
+        title="People operations with a writer’s attention to clarity."
+        description="Divine Eyth works across people operations, HR systems, compliance support, and writing. Her work treats documentation as more than paperwork: it is structure that helps people understand expectations, responsibilities, and possibilities."
+        narrow
+      />
 
       <section className="about-layout">
         <div className="about-intro">
@@ -67,7 +67,7 @@ export function About() {
 
       <section className="band source-band">
         <div>
-          <p className="section-label">Public context</p>
+          <Kicker index="02">Public context</Kicker>
           <h2>Positioning cues, used carefully.</h2>
           <p>
             These public pages support the site’s professional direction and provide context for
@@ -76,7 +76,7 @@ export function About() {
         </div>
         <div className="source-list">
           {profile.publicSources.map((source) => (
-            <a href={source.href} key={source.href} target="_blank" rel="noreferrer">
+            <a href={source.href} key={source.href} target="_blank" rel="noopener noreferrer">
               <strong>{source.label}</strong>
               <span>{source.note}</span>
             </a>

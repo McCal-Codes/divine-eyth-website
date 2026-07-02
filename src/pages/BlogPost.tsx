@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { JsonLd } from '../components/ui/JsonLd'
+import { Kicker } from '../components/ui/Kicker'
 import { Seo } from '../components/ui/Seo'
 import { createBlogPostingSchema, posts } from '../content/posts'
 import { NotFound } from './NotFound'
@@ -26,18 +27,14 @@ export function BlogPost() {
           Back to writing
         </Link>
         <header>
-          <p className="section-label">{post.category}</p>
+          <Kicker>{post.category}</Kicker>
           <h1>{post.title}</h1>
           <p>{post.excerpt}</p>
           <small>
             {post.date} · {post.readingTime}
           </small>
         </header>
-        <div className="post-body">
-          {post.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <div className="post-body" dangerouslySetInnerHTML={{ __html: post.bodyHtml }} />
       </article>
     </>
   )

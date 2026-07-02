@@ -1,3 +1,6 @@
+// Content for the /resume page. `experience`, `education`, `leadership`, and
+// `skillGroups` are plain arrays — add or remove an object to add or remove
+// an entry; the page renders whatever is in each list automatically.
 export const resume = {
   summary:
     'People operations and HR professional with experience across internal operations, onboarding, compliance support, credentialing workflows, administrative systems, and professional communication. Brings an editorial background and writing-centered approach to building clearer workplace processes and more human-centered organizational systems.',

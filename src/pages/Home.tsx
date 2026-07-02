@@ -2,6 +2,7 @@ import { ArrowUpRight, BookOpen, ClipboardCheck, FileText, UsersRound } from 'lu
 import { Link } from 'react-router-dom'
 import { ButtonLink } from '../components/ui/ButtonLink'
 import { JsonLd } from '../components/ui/JsonLd'
+import { Kicker } from '../components/ui/Kicker'
 import { Seo } from '../components/ui/Seo'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { personSchema, profile } from '../content/profile'
@@ -40,6 +41,7 @@ export function Home() {
 
       <section className="hero-section">
         <div className="hero-copy">
+          <Kicker index="01">Introduction</Kicker>
           <p className="hero-name">{profile.name}</p>
           <p className="hero-role">{profile.descriptor}</p>
           <h1>{profile.headline}</h1>
@@ -59,7 +61,13 @@ export function Home() {
           </div>
         </div>
         <figure className="hero-figure">
-          <img src={profile.heroImage} alt={profile.heroAlt} />
+          <img
+            src={profile.heroImage}
+            alt={profile.heroAlt}
+            width={1693}
+            height={929}
+            fetchPriority="high"
+          />
           <figcaption>
             Clear systems, careful language, and people-first infrastructure.
           </figcaption>
@@ -69,6 +77,7 @@ export function Home() {
       <section className="snapshot-section" aria-labelledby="snapshot-title">
         <SectionHeader
           label="Credibility snapshot"
+          index="02"
           title="Operations experience with an editorial sense of clarity."
           body="A public-facing overview of people operations, documentation-heavy workflows, and writing-centered professional communication."
         />
@@ -88,7 +97,7 @@ export function Home() {
 
       <section className="split-section">
         <div>
-          <p className="section-label">Consulting preview</p>
+          <Kicker index="03">Consulting preview</Kicker>
           <h2>Practical support for small teams and growing organizations.</h2>
           <p>
             Consulting is positioned around right-sized HR foundations, onboarding systems,
@@ -112,6 +121,7 @@ export function Home() {
         <div className="section-row">
           <SectionHeader
             label="Writing preview"
+            index="04"
             title="Essays on work, culture, literature, and professional growth."
             body="The writing hub is ready for approved essays, with starter topics marked clearly as drafts."
           />
@@ -147,7 +157,7 @@ export function Home() {
       <section className="resume-preview">
         <div className="resume-paper">
           <FileText aria-hidden="true" size={28} />
-          <p className="section-label">Professional background</p>
+          <Kicker index="05">Professional background</Kicker>
           <h2>{resume.summary}</h2>
           <ButtonLink to="/resume" variant="secondary">
             View full resume
@@ -160,7 +170,7 @@ export function Home() {
             editorial leadership positioning.
           </p>
           {profile.publicSources.map((source) => (
-            <a href={source.href} key={source.href} target="_blank" rel="noreferrer">
+            <a href={source.href} key={source.href} target="_blank" rel="noopener noreferrer">
               {source.label}
               <ArrowUpRight aria-hidden="true" size={14} />
             </a>
@@ -170,7 +180,7 @@ export function Home() {
 
       <section className="contact-cta">
         <div>
-          <p className="section-label">Start a conversation</p>
+          <Kicker index="06">Start a conversation</Kicker>
           <h2>For consulting inquiries, writing opportunities, or aligned career conversations.</h2>
         </div>
         <ButtonLink to="/contact">Contact Divine</ButtonLink>

@@ -1,4 +1,6 @@
 import { ExternalLink, Mail } from 'lucide-react'
+import { Kicker } from '../components/ui/Kicker'
+import { PageHero } from '../components/ui/PageHero'
 import { Seo } from '../components/ui/Seo'
 import { profile } from '../content/profile'
 
@@ -22,18 +24,17 @@ export function Contact() {
         path="/contact"
       />
 
-      <section className="page-hero narrow">
-        <p className="section-label">Contact</p>
-        <h1>For consulting inquiries, writing projects, and aligned opportunities.</h1>
-        <p>
-          Contact details are being finalized. This page outlines the best-fit inquiry areas so the
-          future form and direct links can launch with accurate information.
-        </p>
-      </section>
+      <PageHero
+        index="01"
+        label="Contact"
+        title="For consulting inquiries, writing projects, and aligned opportunities."
+        description="Contact details are being finalized. This page outlines the best-fit inquiry areas so the future form and direct links can launch with accurate information."
+        narrow
+      />
 
       <section className="contact-layout">
         <div className="contact-form contact-form-disabled" aria-labelledby="contact-status-title">
-          <p className="section-label">Inquiry form</p>
+          <Kicker index="02">Inquiry form</Kicker>
           <h2 id="contact-status-title">Contact form coming soon.</h2>
           <p>
             The form integration is intentionally paused until the preferred inbox and submission
@@ -57,7 +58,7 @@ export function Contact() {
             <p>Email will be added once the preferred public inbox is confirmed.</p>
           )}
           {hasLinkedIn ? (
-            <a href={profile.linkedinUrl} target="_blank" rel="noreferrer">
+            <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink aria-hidden="true" size={18} />
               LinkedIn
             </a>
